@@ -8,35 +8,40 @@ window.addEventListener('scroll', () => {
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 
-hamburger.addEventListener('click', () => {
+function closeMenu() {
+  navLinks.classList.remove('mobile-open');
+  hamburger.innerHTML = '&#9776;';
+  document.body.classList.remove('menu-open');
+}
+
+function openMenu() {
+  navLinks.classList.add('mobile-open');
+  hamburger.innerHTML = '&times;';
+  document.body.classList.add('menu-open');
+}
+
+hamburger.addEventListener('click', (e) => {
+  e.stopPropagation();
   const isOpen = navLinks.classList.contains('mobile-open');
   
   if (isOpen) {
-    navLinks.classList.remove('mobile-open');
-    hamburger.innerHTML = '&#9776;';
-    document.body.style.overflow = '';
+    closeMenu();
   } else {
-    navLinks.classList.add('mobile-open');
-    hamburger.innerHTML = '&times;';
-    document.body.style.overflow = 'hidden';
+    openMenu();
   }
 });
 
 // Close menu when clicking on a link
 navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('mobile-open');
-    hamburger.innerHTML = '&#9776;';
-    document.body.style.overflow = '';
+  link.addEventListener('click', (e) => {
+    closeMenu();
   });
 });
 
-// Close menu when clicking outside
-document.addEventListener('click', (e) => {
-  if (!navbar.contains(e.target) && navLinks.classList.contains('mobile-open')) {
-    navLinks.classList.remove('mobile-open');
-    hamburger.innerHTML = '&#9776;';
-    document.body.style.overflow = '';
+// Close menu when clicking on the overlay (background)
+navLinks.addEventListener('click', (e) => {
+  if (e.target === navLinks) {
+    closeMenu();
   }
 });
 
