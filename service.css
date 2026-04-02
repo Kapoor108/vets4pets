@@ -36,9 +36,26 @@ a { text-decoration: none; color: inherit; }
   max-width: 1100px; margin: 0 auto; padding: 0 2rem;
   display: flex; align-items: center; justify-content: space-between;
 }
-.logo { display: flex; align-items: baseline; }
-.logo-sky { font-size: 1.6rem; font-weight: 800; color: #fff; letter-spacing: -1px; }
-.logo-vets { font-size: 1.6rem; font-weight: 800; color: var(--sky); letter-spacing: -1px; }
+.logo { display: flex; align-items: baseline; gap: 0.2rem; }
+.logo-vets { 
+  font-size: 1.6rem; font-weight: 800; 
+  color: var(--pink); 
+  letter-spacing: -1px; 
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+.logo-for { 
+  font-size: 1.6rem; font-weight: 800; 
+  color: #fff; 
+  letter-spacing: -1px; 
+  margin: 0 0.1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+.logo-pets { 
+  font-size: 1.6rem; font-weight: 800; 
+  color: var(--green); 
+  letter-spacing: -1px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
 .back-btn {
   color: rgba(255,255,255,0.75); font-size: 0.88rem; font-weight: 500;
   transition: color 0.2s; padding: 0.4rem 1rem;
@@ -362,7 +379,7 @@ cite { color: var(--gray-600); font-size: 0.88rem; }
 /* Mobile landscape and small tablets (640px - 768px) */
 @media (max-width: 768px) {
   .snav-inner { padding: 0 1.25rem; }
-  .logo-sky, .logo-vets { font-size: 1.4rem; }
+  .logo-vets, .logo-for, .logo-pets { font-size: 1.4rem; }
   
   /* Hero */
   .svc-hero { padding: 4rem 1.25rem 3rem; }
@@ -502,7 +519,7 @@ cite { color: var(--gray-600); font-size: 0.88rem; }
 
 /* Extra small devices (< 375px) */
 @media (max-width: 375px) {
-  .logo-sky, .logo-vets { font-size: 1.25rem; }
+  .logo-vets, .logo-for, .logo-pets { font-size: 1.25rem; }
   .svc-hero { padding: 2.75rem 0.75rem 1.75rem; }
   .svc-main { padding: 0 0.75rem 1.75rem; }
   .btn-primary, .btn-outline, .btn-emergency { 
