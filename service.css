@@ -118,26 +118,52 @@ a { text-decoration: none; color: inherit; }
 
 .btn-emergency {
   display: inline-block;
-  background: #dc2626; color: white;
-  padding: 1rem 2.5rem; border-radius: 50px;
-  font-weight: 700; font-size: 1rem;
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  color: white;
+  padding: 1.1rem 2.8rem; 
+  border-radius: 50px;
+  font-weight: 700; 
+  font-size: 1.1rem;
   animation: pulse-red 1.5s ease-in-out infinite;
-  box-shadow: 0 4px 24px rgba(220,38,38,0.5);
-  position: relative; z-index: 1;
+  box-shadow: 0 6px 30px rgba(220,38,38,0.6);
+  position: relative; 
+  z-index: 1;
+  border: 2px solid rgba(255,255,255,0.3);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+.btn-emergency:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 40px rgba(220,38,38,0.8);
 }
 .btn-emergency-lg {
   display: inline-block;
-  background: #dc2626; color: white;
-  padding: 1.1rem 2.8rem; border-radius: 50px;
-  font-weight: 700; font-size: 1.1rem;
-  box-shadow: 0 4px 24px rgba(220,38,38,0.4);
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  color: white;
+  padding: 1.3rem 3.2rem; 
+  border-radius: 50px;
+  font-weight: 700; 
+  font-size: 1.2rem;
+  box-shadow: 0 8px 35px rgba(220,38,38,0.6);
   transition: all 0.3s;
+  border: 3px solid rgba(255,255,255,0.3);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  animation: pulse-red 2s ease-in-out infinite;
 }
-.btn-emergency-lg:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(220,38,38,0.55); }
+.btn-emergency-lg:hover { 
+  transform: translateY(-4px) scale(1.05); 
+  box-shadow: 0 12px 45px rgba(220,38,38,0.8); 
+}
 
 @keyframes pulse-red {
-  0%, 100% { box-shadow: 0 4px 24px rgba(220,38,38,0.5); }
-  50% { box-shadow: 0 4px 40px rgba(220,38,38,0.85); }
+  0%, 100% { 
+    box-shadow: 0 6px 30px rgba(220,38,38,0.6); 
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 8px 45px rgba(220,38,38,0.9), 0 0 30px rgba(220,38,38,0.5); 
+    transform: scale(1.02);
+  }
 }
 
 /* ===== MAIN CONTENT ===== */
@@ -283,25 +309,57 @@ a { text-decoration: none; color: inherit; }
 .impact-item p { font-size: 0.85rem; color: rgba(255,255,255,0.75); line-height: 1.5; }
 
 /* ===== EMERGENCY ===== */
-.emergency-hero { background: linear-gradient(135deg, #1a0505 0%, #3b0a0a 100%); }
+.emergency-hero { 
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); 
+  box-shadow: inset 0 0 100px rgba(0,0,0,0.3);
+}
 .emergency-pulse {
   font-size: 4rem; margin-bottom: 1rem; position: relative; z-index: 1;
   animation: pulse-scale 1s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(255,255,255,0.5));
 }
 @keyframes pulse-scale {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.15); }
 }
 .emergency-banner {
-  background: #dc2626; color: white;
-  padding: 1.2rem 2rem; border-radius: var(--radius);
-  display: flex; align-items: center; gap: 1.2rem;
-  margin: 2rem 0; box-shadow: 0 4px 20px rgba(220,38,38,0.35);
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  color: white;
+  padding: 1.5rem 2rem; 
+  border-radius: var(--radius);
+  display: flex; 
+  align-items: center; 
+  gap: 1.2rem;
+  margin: 2rem 0; 
+  box-shadow: 0 8px 30px rgba(220,38,38,0.5);
+  border: 3px solid rgba(255,255,255,0.3);
+  animation: glow-pulse 2s ease-in-out infinite;
 }
-.emergency-banner span { font-size: 2rem; flex-shrink: 0; }
-.emergency-banner strong { display: block; font-size: 0.95rem; margin-bottom: 0.2rem; }
-.emergency-banner p { font-size: 1rem; }
-.emergency-banner a { color: white; font-weight: 700; text-decoration: underline; }
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 8px 30px rgba(220,38,38,0.5); }
+  50% { box-shadow: 0 8px 40px rgba(220,38,38,0.8), 0 0 30px rgba(220,38,38,0.4); }
+}
+.emergency-banner span { 
+  font-size: 2.5rem; 
+  flex-shrink: 0;
+  animation: pulse-scale 1.5s ease-in-out infinite;
+}
+.emergency-banner strong { 
+  display: block; 
+  font-size: 1.1rem; 
+  margin-bottom: 0.3rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+.emergency-banner p { 
+  font-size: 1.05rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+.emergency-banner a { 
+  color: white; 
+  font-weight: 700; 
+  text-decoration: underline;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
 
 .emergency-grid {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;
